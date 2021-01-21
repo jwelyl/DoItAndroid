@@ -8,15 +8,16 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Environment;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.pedro.library.AutoPermissions;
 import com.pedro.library.AutoPermissionsListener;
@@ -24,7 +25,6 @@ import com.stanfy.gsonxml.GsonXml;
 import com.stanfy.gsonxml.GsonXmlBuilder;
 import com.stanfy.gsonxml.XmlParserCreator;
 
-import org.jetbrains.annotations.NotNull;
 import org.techtown.diary.data.GeocodeItem;
 import org.techtown.diary.data.GeocodeResult;
 import org.techtown.diary.data.WeatherItem;
@@ -126,12 +126,12 @@ public class MainActivity extends AppCompatActivity implements OnTabItemSelected
     }
 
     @Override
-    public void onDenied(int requestCode, @NotNull String[] permissions) {
+    public void onDenied(int requestCode, String[] permissions) {
         Toast.makeText(this, "permissions denied : " + permissions.length, Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void onGranted(int requestCode, @NotNull String[] permissions) {
+    public void onGranted(int requestCode, String[] permissions) {
         Toast.makeText(this, "permissions granted : " + permissions.length, Toast.LENGTH_LONG).show();
     }
 
